@@ -1,9 +1,9 @@
-# Reforge record: elevateddreams-redesign-v2
+# Reforge record — elevateddreams-redesign-v2
 
 - Source: https://elevateddreamscannabisny.com/
 - Preview: https://sgen-sites.github.io/elevateddreams-redesign-v2/
 - Repo: https://github.com/SGEN-Sites/elevateddreams-redesign-v2
-- Built: 2026-11-18T14:45:04.169Z
+- Built: 2026-11-18T15:07:33.502Z
 - Gate: NOT-READY  (2 pass / 2 fail / 2 unproven)
 
 Every publish is one commit in this repo. Nothing is force-pushed, so each edit is

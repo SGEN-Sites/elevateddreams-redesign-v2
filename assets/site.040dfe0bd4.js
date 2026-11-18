@@ -120,8 +120,8 @@
     tick();
   });
 
-  /* ---------- reveals and light sweeps ---------- */
-  var reveal = $$('[data-reveal]'), lights = $$('[data-light]');
+  /* ---------- reveals and photo settles ---------- */
+  var reveal = $$('[data-reveal]'), lights = $$('[data-settle]');
   function done(el) {
     el.classList.add('is-in');
     var t = parseFloat(getComputedStyle(el).transitionDuration) || 1;
@@ -129,14 +129,14 @@
   }
   if (!('IntersectionObserver' in window) || reduce) {
     reveal.forEach(function (el) { el.removeAttribute('data-reveal'); });
-    lights.forEach(function (el) { el.classList.add('is-lit'); });
+    lights.forEach(function (el) { el.classList.add('is-settled'); });
   } else {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         if (!e.isIntersecting) return;
         io.unobserve(e.target);
         if (e.target.hasAttribute('data-reveal')) done(e.target);
-        if (e.target.hasAttribute('data-light')) e.target.classList.add('is-lit');
+        if (e.target.hasAttribute('data-settle')) e.target.classList.add('is-settled');
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
     reveal.concat(lights).forEach(function (el) { io.observe(el); });
@@ -145,7 +145,7 @@
       setTimeout(function () {
         reveal.concat(lights).forEach(function (el) {
           var r = el.getBoundingClientRect();
-          if (r.top < innerHeight && r.bottom > 0) { if (el.hasAttribute('data-reveal')) done(el); el.classList.add('is-lit'); }
+          if (r.top < innerHeight && r.bottom > 0) { if (el.hasAttribute('data-reveal')) done(el); el.classList.add('is-settled'); }
         });
       }, 1200);
     });

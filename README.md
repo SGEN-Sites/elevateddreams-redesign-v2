@@ -9,7 +9,7 @@ Account button opens the client's live online store.
 Glassmorphism, an ethereal light and tenebrism on the brand's own palette (heliotrope, plum, sage, gold, lavender):
 warm dark plum bands lit by one strong key light alternate with luminous lavender bands. Pictures sit in rounded
 frames and cross the seams between bands while resting on a ledge, a band floor or a grid column. Scroll reveals,
-light sweeps that bring photos out of the dark, gentle depth on framed pictures, pointer-lit cards, still buttons.
+framed photos that settle from a slight zoom as they arrive, gentle depth on framed pictures, pointer-lit cards, still buttons.
 Type: Zilla Slab (display, a nod to the brand's slab serif) and Manrope (text), both under the SIL Open Font License
 and self-hosted.
 

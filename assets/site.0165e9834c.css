@@ -654,20 +654,16 @@ html:not(.js) .hero__pause, .hero__pause[hidden] { display: none; }
 .keep .acards { margin-top: 28px; }
 
 /* motion.css */
-/* motion.css - scroll reveals, the light sweep (photos step out of the dark), parallax hooks, reduced motion.
+/* motion.css - scroll reveals, the photo settle, parallax hooks, reduced motion.
    Every start state is set only under html.js, and the script releases it; a reveal always ends at opacity 1 and
    filter none so glass inside it can blur, and a finished reveal drops its attribute so hovers are not outranked. */
 html.js [data-reveal] { opacity: 0; transform: translateY(26px); filter: blur(6px); transition: opacity .9s var(--ease-soft) var(--d, 0ms), transform 1.1s var(--ease) var(--d, 0ms), filter .9s var(--ease-soft) var(--d, 0ms); }
 html.js [data-reveal].is-in { opacity: 1; transform: none; filter: none; }
 html.no-site [data-reveal] { opacity: 1 !important; transform: none !important; filter: none !important; }
 
-/* light sweep: a dark veil with a soft warm edge slides off the picture as it arrives (tenebrism reveal) */
-[data-light] { position: relative; }
-html.js [data-light]::before { content: ''; position: absolute; inset: -2px; z-index: 2; pointer-events: none; border-radius: inherit;
-  background: linear-gradient(105deg, rgba(27, 21, 41, 0) 0%, rgba(242, 201, 119, .35) 8%, rgba(27, 21, 41, .96) 18%, rgba(27, 21, 41, .98) 100%);
-  background-size: 260% 100%; background-position: 100% 0; transition: background-position 1.6s var(--ease-soft) var(--d, 0ms); }
-html.js [data-light].is-lit::before { background-position: -60% 0; }
-html.no-site [data-light]::before { display: none; }
+/* settle: a framed photo eases from a slight zoom to rest as it arrives. Nothing is ever drawn over a photo. */
+html.js [data-settle] img { scale: 1.06; transition: scale 1.8s var(--ease) var(--d, 0ms), transform 1.2s var(--ease), filter 1.2s var(--ease); }
+html.js [data-settle].is-settled img, html.no-site [data-settle] img { scale: 1; }
 
 /* hero entrance */
 html.js .hero__copy > * { opacity: 0; transform: translateY(22px); animation: rise 1.1s var(--ease) forwards; }
@@ -680,7 +676,7 @@ html.js .hero__still { animation: settle 2.4s var(--ease) both; }
 
 @media (prefers-reduced-motion: reduce) {
   html.js [data-reveal] { opacity: 1; transform: none; filter: none; transition: none; }
-  html.js [data-light]::before { display: none; }
+  html.js [data-settle] img { scale: 1; transition: none; }
   html.js .hero__copy > *, html.js .hero__still { animation: none; opacity: 1; transform: none; filter: none; }
   .shine { animation: none; background-position: 50% 0; }
   .rot__item, .btn, .btn::after, .btn__ico, .tile__pic, .tile__img, .acard__a, .deal, .why, .step, .lcard, .frame__img, .shot__img, .drawer, .drop { transition: none !important; }
