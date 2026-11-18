@@ -1,4 +1,4 @@
-# Reforge record — elevateddreams-redesign-v2
+# Reforge record: elevateddreams-redesign-v2
 
 - Source: https://elevateddreamscannabisny.com/
 - Preview: https://sgen-sites.github.io/elevateddreams-redesign-v2/
