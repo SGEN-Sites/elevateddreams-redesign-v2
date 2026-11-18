@@ -453,7 +453,7 @@ html:not(.js) .hero__pause, .hero__pause[hidden] { display: none; }
 .phero__note { margin-top: 1rem; font-size: .9rem; color: var(--on-night-soft); }
 .phero__card { position: relative; display: flex; justify-content: center; }
 .phero__frame { width: min(400px, 100%); aspect-ratio: 4 / 5; transform: rotate(1.6deg); border: 8px solid rgba(255, 255, 255, .06); }
-.phero__frame--art { width: min(330px, 100%); aspect-ratio: 307 / 256; transform: rotate(-1.4deg); background: #fff; }
+.phero__frame--art { width: min(280px, 100%); aspect-ratio: 307 / 256; transform: rotate(-1.4deg); background: #fff; }
 @media (min-width: 1000px) {
   /* the card crosses the seam: it rests on the next band's top edge and reaches 88 px into it */
   .phero__card { align-self: end; margin-bottom: calc(-1 * clamp(64px, 8vw, 116px) - 88px); }
